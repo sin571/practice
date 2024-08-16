@@ -18,3 +18,9 @@ jobs:
         docker tag test:0.1 sindhujadevops/test:0.1
         docker push sindhujadevops/test:0.1
         docker run -p 8080:8080 sindhujadevops/test:0.1
+    - name: Run post-push script
+      run: |
+          echo "Running additional steps after Docker push..."
+    - name: Checkout code again
+      uses: actions/checkout@v3
+    
