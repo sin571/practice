@@ -14,7 +14,7 @@ jobs:
         password: ${{ secrets.password }}
     - name: push docker image
       run: |
-        docker build -t test:0.1   
+        docker build -t test:0.1 .  
         docker tag test:0.1 sindhujadevops/test:0.1
         docker push sindhujadevops/test:0.1
         docker run -p 8080:8080 sindhujadevops/test:0.1
